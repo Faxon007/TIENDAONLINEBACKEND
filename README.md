@@ -76,53 +76,27 @@ El proyecto estaba pensado soporta dos modos de persistencia, pero por cuestione
 * DynamoDB Local (simulación AWS)
 
 
-Cumplimiento del proyecto - Requerimientos
+Criterios de evaluación
+• Estructura del proyecto y separación de responsabilidades..
 
-Carrito de compras de artículos deportivos
-Backend (Node.js)
-•
-Crear una API REST que permita:
-o
-Listar productos deportivos (nombre, categoría, precio, stock, imagen).
-▪
-Las imágenes deben simular estar en S3 usando MinIO o URLs públicas.
-▪ 
-Incluir lógica para paginación y filtrado por categoría.
-o
-Agregar productos al carrito.
-o
-Eliminar productos del carrito.
-o
-Finalizar la compra (checkout).
-▪
-Validar disponibilidad de stock.
-▪
-Registrar la compra en el historial.
-▪
-Envio de correo de confirmación.
-•
-Simular funciones Lambda usando serverless-offline.
-•
-Usar DynamoDB Local para almacenar:
-o
-Productos disponibles.
-o
-Carritos de compra por usuario.
-o
-Historial de compras.
-o
-Usuarios registrados
-•
-Implementar autenticación con JWT.
-•
-Aplicar middleware de autorización para proteger rutas sensibles.
-•
-Uso de Winston para logging
-Frontend (Vue.js o React)
-•
-Crear una SPA que permita:
-o
-Ver productos disponibles (con paginación y filtros).
-o
-Agregar productos al carrito.
+
+• Uso correcto de promesas/async-await y manejo de errores.
+
+• Simulación realista de servicios AWS.
+Serverless Framework
+Funciones tipo Lambda (handler(event))
+DynamoDB Local
+Estructura por funciones
+Calidad del código y buenas prácticas.
+
+• Documentación clara (README con instrucciones de instalación y ejecución).
+aqui
+
+• Seguridad básica (validación de inputs, tokens, etc.).
+export const authorize = (event)
+Y se usa en:
+/cart
+/checkout
+Ejemplo:
+const user = authorize(event);
 
